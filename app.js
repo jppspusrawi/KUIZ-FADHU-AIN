@@ -1,6 +1,6 @@
 // ====== KONFIGURASI ======
 // GANTI URL DI BAWAH DENGAN URL WEB APP GOOGLE APPS SCRIPT ANDA
-const GOOGLE_SHEETS_WEBAPP_URL = "PASTE_GOOGLE_APPS_SCRIPT_URL_DI_SINI";
+const GOOGLE_SHEETS_WEBAPP_URL = "https://script.google.com/macros/s/AKfycbxi9UdLmfkgdjNUi_OuHrMIlWfpbGgKDTrLsaUg6lUTFZHWZABn8jbHGxuC2FYFY4c1MA/exec";
 
 const CATEGORY_LABELS = {
   fekah: "Fekah (Fiqh Ibadat)",
