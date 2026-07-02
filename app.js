@@ -1,6 +1,6 @@
 // ====== KONFIGURASI ======
 // GANTI URL DI BAWAH DENGAN URL WEB APP GOOGLE APPS SCRIPT ANDA
-const GOOGLE_SHEETS_WEBAPP_URL = "https://script.google.com/macros/s/AKfycbxi9UdLmfkgdjNUi_OuHrMIlWfpbGgKDTrLsaUg6lUTFZHWZABn8jbHGxuC2FYFY4c1MA/exec";
+const GOOGLE_SHEETS_WEBAPP_URL = "PASTE_GOOGLE_APPS_SCRIPT_URL_DI_SINI";
 
 const CATEGORY_LABELS = {
   fekah: "Fekah (Fiqh Ibadat)",
@@ -291,20 +291,33 @@ function sendToGoogleSheets(results) {
   };
 
   setSyncStatus('', '⏳', 'Menghantar data ke sistem...');
+  console.log('Menghantar payload ke Google Sheets:', payload);
 
   fetch(GOOGLE_SHEETS_WEBAPP_URL, {
     method: 'POST',
-    mode: 'no-cors', // Google Apps Script web apps often require no-cors from browser
     headers: { 'Content-Type': 'text/plain;charset=utf-8' },
     body: JSON.stringify(payload)
   })
-  .then(() => {
-    // no-cors mode always resolves without readable response, treat as success
-    setSyncStatus('ok', '✅', 'Data berjaya disimpan ke sistem.');
+  .then(res => res.text())
+  .then(text => {
+    console.log('Respons daripada Google Sheets:', text);
+    let parsed;
+    try { parsed = JSON.parse(text); } catch (e) { parsed = null; }
+
+    if (parsed && parsed.status === 'success') {
+      setSyncStatus('ok', '✅', 'Data berjaya disimpan ke sistem.');
+    } else if (parsed && parsed.status === 'error') {
+      console.error('Ralat dari Apps Script:', parsed.message);
+      setSyncStatus('error', '⚠️', 'Gagal simpan: ' + parsed.message);
+    } else {
+      // Respons tidak dijangka (cth: HTML skrin log masuk Google)
+      console.warn('Respons tidak dijangka, kemungkinan isu kebenaran (Who has access).');
+      setSyncStatus('error', '⚠️', 'Gagal menghantar data. Sila semak tetapan "Who has access" pada deployment (perlu "Anyone").');
+    }
   })
   .catch(err => {
-    console.error('Sync error:', err);
-    setSyncStatus('error', '⚠️', 'Gagal menghantar data. Sila maklumkan kepada Unit Shariah.');
+    console.error('Sync error (fetch gagal / CORS):', err);
+    setSyncStatus('error', '⚠️', 'Gagal menghantar data (ralat sambungan). Sila hubungi Unit Shariah.');
   });
 }
 
