@@ -11,59 +11,15 @@ const QUIZ_QUESTIONS = [
     "answer": 0
   },
   {
-    "q": "Apakah tiga peringkat dalam Mujahadatun Nafsi?",
+    "q": "Proses membersihkan hati daripada sifat mazmumah (sombong, dengki, tamak) dan menghiasinya dengan sifat mahmudah (sabar, syukur, ikhlas) dikenali sebagai:",
     "type": "mcq",
     "options": [
-      "Iman, Islam, Ihsan",
-      "Takhalli, Tahalli, Tajalli",
-      "Syariat, Tariqat, Hakikat",
-      "Taubat, Sabar, Syukur"
+      "Mujahadatun Nafsi",
+      "Solat Sunat",
+      "Puasa Sunat",
+      "Zikir Harian"
     ],
-    "answer": 1
-  },
-  {
-    "q": "Peringkat membersihkan hati daripada sifat mazmumah dikenali sebagai:",
-    "type": "mcq",
-    "options": [
-      "Tahalli",
-      "Tajalli",
-      "Takhalli",
-      "Tawakkal"
-    ],
-    "answer": 2
-  },
-  {
-    "q": "Antara berikut, manakah TERMASUK sifat mazmumah yang perlu dibersihkan dalam Takhalli?",
-    "type": "mcq",
-    "options": [
-      "Sabar",
-      "Ujub",
-      "Ikhlas",
-      "Syukur"
-    ],
-    "answer": 1
-  },
-  {
-    "q": "Antara berikut, manakah TERMASUK sifat mahmudah dalam peringkat Tahalli?",
-    "type": "mcq",
-    "options": [
-      "Sombong",
-      "Dengki",
-      "Tawadhu'",
-      "Tamak"
-    ],
-    "answer": 2
-  },
-  {
-    "q": "Perasaan sentiasa merasakan kebesaran dan kehebatan Allah tanpa memerlukan usaha dikenali sebagai:",
-    "type": "mcq",
-    "options": [
-      "Takhalli",
-      "Tahalli",
-      "Tajalli",
-      "Zuhud"
-    ],
-    "answer": 2
+    "answer": 0
   },
   {
     "q": "Berpura-pura menganut dan patuh ajaran Islam tetapi hatinya tidak mempercayai ajaran Islam dikenali sebagai:",
@@ -88,15 +44,15 @@ const QUIZ_QUESTIONS = [
     "answer": 0
   },
   {
-    "q": "Berapakah syarat taubat sekiranya maksiat itu hanya antara hamba dengan Allah SWT?",
+    "q": "Antara berikut, manakah pernyataan yang SALAH tentang syarat taubat (maksiat antara hamba dengan Allah SWT sahaja)?",
     "type": "mcq",
     "options": [
-      "2 syarat",
-      "3 syarat",
-      "4 syarat",
-      "5 syarat"
+      "Menjauhi dan meninggalkan maksiat tersebut",
+      "Menyesal kerana telah melakukan maksiat itu",
+      "Berazam tidak akan mengulangi maksiat itu",
+      "Boleh terus mengulangi maksiat itu asalkan hati tetap menyesal"
     ],
-    "answer": 1
+    "answer": 3
   },
   {
     "q": "Sifat takut kepada kemurkaan dan azab Allah SWT dengan menjauhi segala larangan-Nya dikenali sebagai:",
@@ -110,46 +66,46 @@ const QUIZ_QUESTIONS = [
     "answer": 1
   },
   {
-    "q": "Sifat mengharapkan keredhaan Allah SWT dengan melaksanakan segala perintah-Nya dikenali sebagai:",
+    "q": "Sekiranya seseorang dikutuk dan dihina oleh orang lain, apakah tindakan yang paling bertepatan dengan akhlak Islam?",
     "type": "mcq",
     "options": [
-      "Khauf",
-      "Raja'",
-      "Tawakkal",
-      "Sabar"
+      "Membalas kutukan dengan kutukan yang lebih teruk",
+      "Bersabar dan tidak membalas dengan kejahatan",
+      "Menyimpan dendam dan mengumpat orang tersebut",
+      "Terus memutuskan hubungan silaturahim selamanya"
     ],
     "answer": 1
   },
   {
-    "q": "'Dunia di tangan, di hati jangan' merupakan nasihat daripada:",
+    "q": "Zuhud menurut nasihat 'Dunia di tangan, di hati jangan' membawa maksud:",
     "type": "mcq",
     "options": [
-      "Imam Ghazali",
-      "Syaikh Muhammad bin Shalih al-Utsaimin",
-      "Ibnu Athaillah as-Sakandari",
-      "Imam Nawawi"
+      "Meninggalkan dunia sepenuhnya dan tidak bekerja mencari rezeki",
+      "Dunia boleh dimiliki dan diusahakan, tetapi jangan sampai menguasai hati",
+      "Mengharamkan segala kekayaan dan harta benda",
+      "Hidup miskin adalah wajib bagi setiap Muslim"
     ],
     "answer": 1
   },
   {
-    "q": "Menurut Imam Nawawi, antara syarat taubat ialah menjauhi dan meninggalkan maksiat, menyesal, serta:",
+    "q": "Apabila seseorang rakan sekerja mendapat kenaikan pangkat atau nikmat yang baik, apakah akhlak yang dituntut dalam Islam?",
     "type": "mcq",
     "options": [
-      "Berazam tidak mengulangi maksiat",
-      "Mengaku kepada orang ramai",
-      "Berpuasa selama sebulan",
-      "Menunggu Ramadan"
+      "Berasa dengki dan cuba menjatuhkan rakan tersebut",
+      "Bersyukur dan turut gembira dengan nikmat orang lain",
+      "Menyebarkan fitnah supaya nikmat itu tertarik balik",
+      "Berpura-pura gembira tetapi menyimpan kebencian"
     ],
-    "answer": 0
+    "answer": 1
   },
   {
-    "q": "Etika bersumberkan:",
+    "q": "Akhlak bersumberkan Al-Quran dan Sunnah, manakala Etika bersumberkan:",
     "type": "mcq",
     "options": [
-      "Al-Quran dan Sunnah",
-      "Akal pemikiran",
-      "Adat kebiasaan masyarakat",
-      "Fatwa mufti"
+      "Al-Quran dan Sunnah juga",
+      "Akal pemikiran manusia",
+      "Kitab-kitab hadis",
+      "Fatwa mufti sahaja"
     ],
     "answer": 1
   },
@@ -163,6 +119,50 @@ const QUIZ_QUESTIONS = [
       "Kitab hadis"
     ],
     "answer": 2
+  },
+  {
+    "q": "Sifat mengharapkan keredhaan Allah SWT dengan melaksanakan segala perintah-Nya dikenali sebagai:",
+    "type": "mcq",
+    "options": [
+      "Khauf",
+      "Raja'",
+      "Takbur",
+      "Riak"
+    ],
+    "answer": 1
+  },
+  {
+    "q": "Menunjuk-nunjuk amalan baik yang dilakukan dengan tujuan mendapat pujian orang lain dikenali sebagai:",
+    "type": "mcq",
+    "options": [
+      "Riak",
+      "Ikhlas",
+      "Tawadhu'",
+      "Zuhud"
+    ],
+    "answer": 0
+  },
+  {
+    "q": "Apabila seseorang diberi amanah menjaga barang atau wang orang lain, apakah akhlak yang dituntut dalam Islam?",
+    "type": "mcq",
+    "options": [
+      "Mengambil sedikit untuk kegunaan sendiri kerana dianggap tidak berdosa",
+      "Menunaikan amanah tersebut dengan jujur tanpa mengambil hak orang lain",
+      "Menyimpan sahaja tanpa memulangkan jika tiada yang tahu",
+      "Menggunakannya sesuka hati kerana pemiliknya tidak nampak"
+    ],
+    "answer": 1
+  },
+  {
+    "q": "Sekiranya seseorang melihat kesilapan atau kelemahan rakan sekerja, apakah akhlak yang dituntut dalam Islam?",
+    "type": "mcq",
+    "options": [
+      "Menyebarkan kesilapan itu kepada orang ramai",
+      "Menegur secara baik dan menutup keaibannya daripada orang lain",
+      "Mendiamkan diri sahaja tanpa peduli",
+      "Mengambil kesempatan untuk menjatuhkan maruahnya"
+    ],
+    "answer": 1
   },
   {
     "q": "Menurut Imam Ghazali, akhlak adalah sifat yang tertanam dalam jiwa yang menimbulkan perbuatan dengan mudah tanpa memerlukan pemikiran.",
