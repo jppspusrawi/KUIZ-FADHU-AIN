@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kuiz Akidah — Unit Shariah PUSRAWI</title>
+<style>
+  :root{
+    --navy:#0b3d4c; --navy-deep:#082b36; --teal:#1f7a6c; --teal-light:#e8f3f0;
+    --gold:#b8860b; --gold-light:#f5ecd9; --cream:#faf7f0; --ink:#1c2b2e;
+    --ink-soft:#5a6b6e; --line:#d9e2e0; --danger:#a13d3d; --ok:#1f7a52;
+    --white:#ffffff; --radius:14px; --shadow:0 4px 18px rgba(11,61,76,0.08);
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    font-family:'Segoe UI','Noto Sans',-apple-system,sans-serif;
+    background:radial-gradient(circle at 15% 8%, rgba(184,134,11,0.05), transparent 40%),
+      radial-gradient(circle at 85% 92%, rgba(31,122,108,0.06), transparent 45%), var(--cream);
+    color:var(--ink); min-height:100vh; line-height:1.55;
+  }
+  .wrap{max-width:760px;margin:0 auto;padding:28px 20px 80px;}
+  .brand{
+    display:flex;align-items:center;gap:14px;padding:18px 22px;
+    background:linear-gradient(135deg, var(--navy) 0%, var(--navy-deep) 100%);
+    border-radius:var(--radius);color:#fff;margin-bottom:22px;box-shadow:var(--shadow);
+    position:relative;overflow:hidden;
+  }
+  .brand::after{content:"";position:absolute;right:-30px;top:-30px;width:140px;height:140px;
+    background:radial-gradient(circle, rgba(184,134,11,0.35), transparent 70%);}
+  .brand-mark{width:46px;height:46px;border-radius:50%;background:var(--gold-light);
+    display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0;
+    border:2px solid rgba(184,134,11,0.5);}
+  .brand-text .eyebrow{font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+    color:rgba(255,255,255,0.65);font-weight:600;}
+  .brand-text h1{margin:2px 0 0;font-size:19px;font-weight:700;letter-spacing:.01em;}
+  .card{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);
+    padding:26px 24px;box-shadow:var(--shadow);margin-bottom:18px;}
+  .intro-quote{font-size:15px;color:var(--ink-soft);border-left:3px solid var(--gold);
+    padding:10px 16px;background:var(--gold-light);border-radius:0 8px 8px 0;
+    margin:16px 0 22px;font-style:italic;}
+  h2.section-title{font-size:17px;margin:0 0 4px;color:var(--navy);}
+  .muted{color:var(--ink-soft);font-size:14px;margin:0 0 18px;}
+  label{display:block;font-size:13px;font-weight:600;color:var(--navy);margin:16px 0 6px;}
+  label:first-of-type{margin-top:0;}
+  input[type=text]{width:100%;padding:12px 14px;border:1.5px solid var(--line);border-radius:9px;
+    font-size:15px;font-family:inherit;color:var(--ink);background:#fff;transition:border-color .15s ease;}
+  input[type=text]:focus{outline:none;border-color:var(--teal);}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--teal);
+    color:#fff;border:none;padding:13px 22px;border-radius:9px;font-size:15px;font-weight:600;
+    cursor:pointer;transition:background .15s ease, transform .1s ease;width:100%;margin-top:20px;}
+  .btn:hover{background:#186356;}
+  .btn:active{transform:scale(0.98);}
+  .btn.secondary{background:transparent;color:var(--teal);border:1.5px solid var(--teal);}
+  .btn.secondary:hover{background:var(--teal-light);}
+  .btn:disabled{opacity:.55;cursor:not-allowed;}
+  .back-link{display:inline-flex;align-items:center;gap:6px;color:var(--ink-soft);font-size:13px;
+    text-decoration:none;margin-bottom:14px;cursor:pointer;}
+  .back-link:hover{color:var(--teal);}
+  .progress-wrap{margin-bottom:18px;}
+  .progress-label{display:flex;justify-content:space-between;font-size:12px;color:var(--ink-soft);
+    margin-bottom:6px;font-weight:600;}
+  .progress-bar{height:8px;background:var(--line);border-radius:99px;overflow:hidden;}
+  .progress-fill{height:100%;background:linear-gradient(90deg, var(--teal), var(--navy));
+    border-radius:99px;transition:width .3s ease;}
+  .q-badge{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.06em;
+    text-transform:uppercase;padding:4px 10px;border-radius:99px;background:var(--teal-light);
+    color:var(--teal);margin-bottom:12px;}
+  .q-text{font-size:17px;font-weight:600;color:var(--ink);margin:0 0 20px;line-height:1.5;}
+  .options{display:grid;gap:10px;}
+  .option{display:flex;align-items:center;gap:12px;padding:14px 16px;border:1.5px solid var(--line);
+    border-radius:10px;cursor:pointer;font-size:15px;transition:border-color .15s ease, background .15s ease;
+    background:#fff;}
+  .option:hover{border-color:var(--teal);background:var(--teal-light);}
+  .option.selected{border-color:var(--teal);background:var(--teal-light);font-weight:600;}
+  .option-mark{width:22px;height:22px;border-radius:50%;border:2px solid var(--line);flex-shrink:0;
+    display:flex;align-items:center;justify-content:center;font-size:12px;color:#fff;}
+  .option.selected .option-mark{background:var(--teal);border-color:var(--teal);}
+  .nav-row{display:flex;gap:10px;margin-top:22px;}
+  .nav-row .btn{margin-top:0;}
+  .result-hero{text-align:center;padding:30px 20px 10px;}
+  .result-grade{width:120px;height:120px;border-radius:50%;margin:0 auto 18px;display:flex;
+    align-items:center;justify-content:center;font-size:46px;font-weight:800;color:#fff;
+    box-shadow:0 10px 30px rgba(0,0,0,0.15);}
+  .grade-A{background:linear-gradient(135deg,#1f7a52,#14523a);}
+  .grade-B{background:linear-gradient(135deg,#1f7a6c,#0b4c42);}
+  .grade-C{background:linear-gradient(135deg,#b8860b,#8a6408);}
+  .grade-F{background:linear-gradient(135deg,#a13d3d,#7a2a2a);}
+  .result-score{font-size:15px;color:var(--ink-soft);margin:0 0 4px;}
+  .result-score b{color:var(--ink);font-size:22px;}
+  .result-name{font-size:14px;color:var(--ink-soft);margin-top:2px;}
+  .breakdown{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:22px 0;}
+  .breakdown .stat{text-align:center;padding:14px 10px;background:var(--teal-light);border-radius:10px;}
+  .breakdown .stat .num{font-size:22px;font-weight:700;color:var(--navy);}
+  .breakdown .stat .lbl{font-size:12px;color:var(--ink-soft);margin-top:2px;}
+  .review-item{border-bottom:1px solid var(--line);padding:14px 0;}
+  .review-item:last-child{border-bottom:none;}
+  .review-q{font-size:14px;font-weight:600;margin:0 0 6px;}
+  .review-ans{font-size:13px;margin:2px 0;}
+  .review-ans.wrong{color:var(--danger);}
+  .review-ans.correct{color:var(--ok);}
+  .sync-status{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--ink-soft);
+    padding:10px 14px;border-radius:8px;background:var(--teal-light);margin:16px 0;}
+  .sync-status.error{background:#fbeaea;color:var(--danger);}
+  .sync-status.ok{background:var(--teal-light);color:var(--ok);}
+  .footer-note{text-align:center;font-size:12px;color:var(--ink-soft);margin-top:26px;}
+  @media (max-width:480px){.wrap{padding:18px 14px 60px;}.card{padding:20px 16px;}}
+  .hidden{display:none !important;}
+  .modal-overlay{position:fixed;inset:0;background:rgba(11,61,76,0.55);display:flex;
+    align-items:center;justify-content:center;padding:20px;z-index:50;}
+  .modal-box{background:#fff;border-radius:14px;padding:24px;max-width:360px;text-align:center;
+    box-shadow:0 20px 50px rgba(0,0,0,0.25);}
+  .modal-box h3{margin:0 0 10px;color:var(--navy);}
+  .modal-box p{font-size:14px;color:var(--ink-soft);margin:0 0 18px;}
+  .required-note{color:var(--danger);font-size:12px;margin-top:6px;display:none;}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="brand">
+    <div class="brand-mark">☾</div>
+    <div class="brand-text">
+      <div class="eyebrow">Unit Shariah · Hospital PUSRAWI</div>
+      <h1>Kuiz Akidah (Tauhid)</h1>
+    </div>
+  </div>
+
+  <div id="view-home">
+    <div class="card">
+      <h2 class="section-title">Selamat Datang</h2>
+      <p class="muted">Kuiz penilaian Akidah (Tauhid) untuk warga kerja Hospital PUSRAWI. Sila lengkapkan maklumat untuk memulakan.</p>
+      <div class="intro-quote">"Dan tidaklah Aku ciptakan jin dan manusia melainkan untuk beribadah kepada-Ku." — Adh-Dhariyat: 56</div>
+      <label for="inp-nama">Nama Penuh</label>
+      <input type="text" id="inp-nama" placeholder="Contoh: Ahmad bin Ali">
+      <label for="inp-jabatan">Jabatan</label>
+      <input type="text" id="inp-jabatan" placeholder="Contoh: Jabatan Kejururawatan">
+      <label for="inp-id">No. ID Pekerja</label>
+      <input type="text" id="inp-id" placeholder="Contoh: P00123">
+      <p class="required-note" id="required-note">Sila lengkapkan Nama, Jabatan dan No. ID sebelum memulakan kuiz.</p>
+      <button class="btn" id="btn-start">Mula Kuiz — Akidah (Tauhid)</button>
+    </div>
+    <p class="footer-note">© Unit Shariah, Hospital PUSRAWI &nbsp;·&nbsp; Jabatan Perundangan &amp; Perkhidmatan Shariah</p>
+  </div>
+
+  <div id="view-quiz" class="hidden">
+    <a class="back-link" id="btn-quit">‹ Keluar Kuiz</a>
+    <div class="card">
+      <div class="progress-wrap">
+        <div class="progress-label"><span>Akidah (Tauhid)</span><span id="progress-text">Soalan 1 / 20</span></div>
+        <div class="progress-bar"><div class="progress-fill" id="progress-fill" style="width:5%"></div></div>
+      </div>
+      <span class="q-badge" id="q-type-badge">OBJEKTIF</span>
+      <p class="q-text" id="q-text">Soalan...</p>
+      <div class="options" id="q-options"></div>
+      <div class="nav-row">
+        <button class="btn secondary" id="btn-prev">‹ Sebelum</button>
+        <button class="btn" id="btn-next">Seterusnya ›</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="view-result" class="hidden">
+    <div class="card result-hero">
+      <div class="result-grade" id="result-grade-badge">A</div>
+      <p class="result-score">Markah Anda: <b id="result-score-num">0%</b></p>
+      <p class="result-name" id="result-name-line"></p>
+    </div>
+    <div class="card">
+      <div class="breakdown">
+        <div class="stat"><div class="num" id="stat-correct">0</div><div class="lbl">Jawapan Betul</div></div>
+        <div class="stat"><div class="num" id="stat-wrong">0</div><div class="lbl">Jawapan Salah</div></div>
+      </div>
+      <div id="sync-status-box" class="sync-status"><span id="sync-icon">⏳</span> <span id="sync-text">Menghantar data ke sistem...</span></div>
+      <button class="btn secondary" id="btn-review-toggle">Lihat Semakan Jawapan</button>
+      <div id="review-list" class="hidden" style="margin-top:16px;"></div>
+    </div>
+    <div class="card"><button class="btn" id="btn-restart">Kembali ke Menu Utama</button></div>
+    <p class="footer-note">© Unit Shariah, Hospital PUSRAWI</p>
+  </div>
+
+  <div id="modal-quit" class="modal-overlay hidden">
+    <div class="modal-box">
+      <h3>Keluar Kuiz?</h3>
+      <p>Jawapan anda tidak akan disimpan jika keluar sekarang.</p>
+      <button class="btn" id="modal-quit-confirm">Ya, Keluar</button>
+      <button class="btn secondary" id="modal-quit-cancel" style="margin-top:10px;">Batal</button>
+    </div>
+  </div>
+
+</div>
+
+<script src="questions_akidah_data.js"></script>
+<script src="quiz-app.js"></script>
+</body>
+</html>
