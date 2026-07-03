@@ -110,15 +110,15 @@ const QUIZ_QUESTIONS = [
     "answer": 0
   },
   {
-    "q": "Qadar ialah:",
+    "q": "Qadar bermaksud:",
     "type": "mcq",
     "options": [
-      "Berlakunya sesuatu mengikut ketetapan",
-      "Menetapkan kadar sesuatu sebelum ia berlaku",
-      "Usaha manusia sepenuhnya",
-      "Ketentuan yang boleh diubah manusia"
+      "Ketetapan atau ketentuan Allah ke atas sesuatu perkara sebelum ia berlaku",
+      "Perkara yang telah berlaku dan dilihat oleh manusia",
+      "Usaha manusia semata-mata tanpa kaitan dengan Allah",
+      "Peraturan yang dicipta oleh manusia sendiri"
     ],
-    "answer": 1
+    "answer": 0
   },
   {
     "q": "Fahaman yang menolak sepenuhnya perbuatan manusia dan menyandarkan semuanya kepada Allah dikenali sebagai:",
@@ -143,26 +143,26 @@ const QUIZ_QUESTIONS = [
     "answer": 1
   },
   {
-    "q": "Aqidah seseorang boleh rosak disebabkan oleh berapa punca utama?",
+    "q": "Antara berikut, manakah TERMASUK punca yang boleh merosakkan aqidah seseorang?",
     "type": "mcq",
     "options": [
-      "2",
-      "3",
-      "4",
-      "5"
+      "Perkataan, perbuatan, keyakinan (iktiqad) dan syak (keraguan) yang bercanggah dengan Islam",
+      "Membaca Al-Quran dan berzikir setiap hari",
+      "Menunaikan solat lima waktu dengan istiqamah",
+      "Bersedekah dan membantu golongan miskin"
     ],
-    "answer": 2
+    "answer": 0
   },
   {
-    "q": "Klasifikasi Sifat 20 yang berhubung dengan Zat Allah semata-mata dikenali sebagai:",
+    "q": "Sifat Nafsiah adalah sifat yang:",
     "type": "mcq",
     "options": [
-      "Salbiyyah",
-      "Nafsiyah",
-      "Ma'ani",
-      "Ma'nawiyyah"
+      "Berhubung dengan Zat Allah semata-mata (contoh: Wujud)",
+      "Menolak segala bentuk kekurangan yang tidak layak bagi Allah",
+      "Sifat abstrak yang wajib wujud pada Zat Allah (contoh: Qudrat, Iradat)",
+      "Keadaan yang lazim daripada sifat Ma'ani"
     ],
-    "answer": 1
+    "answer": 0
   },
   {
     "q": "Fahaman Qadariah percaya bahawa tidak ada campur tangan Tuhan dalam segala perkara yang dilakukan manusia.",
