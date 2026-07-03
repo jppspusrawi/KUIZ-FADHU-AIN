@@ -99,26 +99,26 @@ const QUIZ_QUESTIONS = [
     "answer": 1
   },
   {
-    "q": "Akhlak bersumberkan Al-Quran dan Sunnah, manakala Etika bersumberkan:",
+    "q": "Seorang pekerja bersedekah, kemudian dia sengaja bercerita kepada ramai rakan sekerja tentang jumlah sedekah yang diberikannya supaya dipuji sebagai seorang yang pemurah. Perbuatan ini adalah ciri sifat:",
     "type": "mcq",
     "options": [
-      "Al-Quran dan Sunnah juga",
-      "Akal pemikiran manusia",
-      "Kitab-kitab hadis",
-      "Fatwa mufti sahaja"
+      "Riyak / Sum'ah",
+      "Tawadhu'",
+      "Ikhlas",
+      "Zuhud"
     ],
-    "answer": 1
+    "answer": 0
   },
   {
-    "q": "Moral bersumberkan:",
+    "q": "Seorang kakitangan sentiasa memandang rendah rakan sekerja lain, dan menganggap dirinya paling bijak serta paling berjasa berbanding orang lain di jabatannya. Sikap ini adalah ciri sifat:",
     "type": "mcq",
     "options": [
-      "Al-Quran dan Sunnah",
-      "Akal pemikiran",
-      "Adat kebiasaan yang berlaku dalam masyarakat",
-      "Kitab hadis"
+      "Tawakkal",
+      "Takbur / Ujub",
+      "Sabar",
+      "Redha"
     ],
-    "answer": 2
+    "answer": 1
   },
   {
     "q": "Sifat mengharapkan keredhaan Allah SWT dengan melaksanakan segala perintah-Nya dikenali sebagai:",
@@ -180,9 +180,9 @@ const QUIZ_QUESTIONS = [
     "answer": true
   },
   {
-    "q": "Akhlak bersumberkan Al-Quran dan Sunnah, manakala Etika bersumberkan akal pemikiran.",
+    "q": "Seorang pekerja menegur kesilapan rakan sekerja secara terbuka di hadapan orang ramai dengan tujuan memalukannya adalah akhlak yang terpuji.",
     "type": "tf",
-    "answer": true
+    "answer": false
   },
   {
     "q": "Antara ciri-ciri peribadi Muslim ialah aqidah yang sejahtera, ibadah yang sohih dan akhlak yang mantap.",
